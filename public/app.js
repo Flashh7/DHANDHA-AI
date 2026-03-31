@@ -1,53 +1,13 @@
 const ideaEl = document.getElementById('idea');
-const apiUrlEl = document.getElementById('apiUrl');
-const apiKeyEl = document.getElementById('apiKey');
 const analyzeBtn = document.getElementById('analyzeBtn');
 const spinner = document.getElementById('spinner');
 const statusEl = document.getElementById('status');
 const resultCardEl = document.getElementById('resultCard');
 const resultEl = document.getElementById('result');
 const downloadBtn = document.getElementById('downloadBtn');
-const credentialsPanel = document.getElementById('credentialsPanel');
-const credentialsNotice = document.getElementById('credentialsNotice');
-
-const storedApiUrl = localStorage.getItem('nvidiaApiUrl');
-const storedApiKey = localStorage.getItem('nvidiaApiKey');
-if (storedApiUrl) apiUrlEl.value = storedApiUrl;
-if (storedApiKey) apiKeyEl.value = storedApiKey;
-
-let hasServerConfig = false;
-
-
-async function initCredentialDisplay() {
-  try {
-      const response = await fetch('/api/config');
-      if (response.ok) {
-        const data = await response.json();
-        hasServerConfig = data.hasNvidiaConfig;
-      }
-    } catch (err) {
-      console.warn('Unable to fetch config status', err);
-    }
-
-    const storedValuesExist = Boolean(storedApiKey || storedApiUrl);
-    if (storedValuesExist || hasServerConfig) {
-      credentialsPanel?.classList.add('hidden');
-      credentialsNotice?.classList.remove('hidden');
-    } else {
-      credentialsPanel?.classList.remove('hidden');
-      credentialsNotice?.classList.add('hidden');
-    }
-  }
-
-  initCredentialDisplay();
 
   analyzeBtn.addEventListener('click', async () => {
     const idea = ideaEl.value.trim();
-    const apiKey = apiKeyEl.value.trim() || localStorage.getItem('nvidiaApiKey');
-    const apiUrl = apiUrlEl.value.trim() || localStorage.getItem('nvidiaApiUrl');
-
-    if (apiKey) localStorage.setItem('nvidiaApiKey', apiKey);
-    if (apiUrl) localStorage.setItem('nvidiaApiUrl', apiUrl);
 
     if (!idea) {
       statusEl.textContent = 'Please enter an idea to analyze.';
@@ -64,8 +24,6 @@ async function initCredentialDisplay() {
 
     try {
       const requestBody = { idea };
-      if (apiKey) requestBody.apiKey = apiKey;
-      if (apiUrl) requestBody.apiUrl = apiUrl;
 
       const response = await fetch('/api/analyze', {
         method: 'POST',
