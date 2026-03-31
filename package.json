@@ -1,0 +1,14 @@
+{
+  "name": "startup-idea-analyzer",
+  "version": "1.0.0",
+  "description": "Indian startup idea analyzer with structured investor-style evaluation prompts.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.4",
+    "openai": "^4.3.1"
+  }
+}

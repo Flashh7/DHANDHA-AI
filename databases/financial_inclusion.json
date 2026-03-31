@@ -1,0 +1,95 @@
+{
+  "dataset_name": "Financial Inclusion and Payment Data",
+  "version": "1.0",
+  "last_updated": "2024-12",
+  "sources": [
+    "RBI (rbi.org.in)",
+    "NPCI (npci.org.in)",
+    "PMJDY Dashboard",
+    "SEBI (sebi.gov.in)",
+    "NSDL / CDSL",
+    "AMFI (amfiindia.com)",
+    "IRDAI (irdai.gov.in)",
+    "IFC / TransUnion CIBIL",
+    "NABARD",
+    "MFIN (Microfinance Institutions Network)"
+  ],
+  "metrics": [
+    {
+      "metric": "Jan Dhan Accounts",
+      "value_cr": 52,
+      "value_description": "52+ Cr accounts opened under PMJDY",
+      "source": "PMJDY Dashboard"
+    },
+    {
+      "metric": "Demat Accounts",
+      "value_cr": 15,
+      "value_description": "15+ Cr active demat accounts",
+      "source": "SEBI, NSDL/CDSL"
+    },
+    {
+      "metric": "SIP Accounts (Monthly Active)",
+      "value_cr": 8.5,
+      "value_description": "8.5+ Cr monthly SIP contributions",
+      "source": "AMFI"
+    },
+    {
+      "metric": "Credit Cards in Circulation",
+      "value_cr": 10,
+      "value_description": "10+ Cr active credit cards",
+      "source": "RBI"
+    },
+    {
+      "metric": "Debit Cards in Circulation",
+      "value_cr": 98,
+      "value_description": "98+ Cr debit cards issued",
+      "source": "RBI"
+    },
+    {
+      "metric": "Insurance Penetration",
+      "value_pct": 4.0,
+      "breakdown": {
+        "life_insurance_pct": 3.2,
+        "non_life_insurance_pct": 0.8
+      },
+      "source": "IRDAI"
+    },
+    {
+      "metric": "Mutual Fund AUM",
+      "value_lakh_cr": 53,
+      "value_description": "₹53+ Lakh Cr total AUM",
+      "source": "AMFI"
+    },
+    {
+      "metric": "Digital Payment Transactions (FY24)",
+      "volume_cr": 14726,
+      "value_description": "14,726 Cr transactions across all digital modes",
+      "source": "RBI, NPCI"
+    },
+    {
+      "metric": "MSME Credit Gap",
+      "value_lakh_cr": 25,
+      "value_description": "Estimated ₹25 Lakh Cr unmet credit demand in MSME sector",
+      "source": "IFC/TransUnion CIBIL"
+    },
+    {
+      "metric": "Retail Credit Outstanding",
+      "value_lakh_cr": 48,
+      "value_description": "₹48+ Lakh Cr retail loans outstanding",
+      "source": "RBI"
+    },
+    {
+      "metric": "Agricultural Credit",
+      "value_lakh_cr": 20,
+      "value_description": "₹20+ Lakh Cr agricultural credit disbursed",
+      "source": "NABARD"
+    },
+    {
+      "metric": "Microfinance Portfolio",
+      "value_lakh_cr": 3.9,
+      "value_description": "₹3.9 Lakh Cr gross loan portfolio",
+      "source": "MFIN"
+    }
+  ]
+}
+

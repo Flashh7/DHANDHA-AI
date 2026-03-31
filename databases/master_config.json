@@ -1,0 +1,119 @@
+{
+  "dataset_name": "Master Configuration - Indian Startup Validation AI",
+  "version": "1.0",
+  "last_updated": "2024-12",
+  "total_datasets": 15,
+  "file_manifest": [
+    {
+      "file_number": 1,
+      "filename": "city_master_data.json",
+      "description": "30 Indian cities — population, income, digital adoption, startup density",
+      "records": 30
+    },
+    {
+      "file_number": 2,
+      "filename": "mindset_matrix.json",
+      "description": "Behavioral scoring — WTP, trust, jugaad, family influence by city",
+      "records": 30
+    },
+    {
+      "file_number": 3,
+      "filename": "state_economic_indicators.json",
+      "description": "State GSDP, FDI, MSME, banking, financial inclusion",
+      "records": 21
+    },
+    {
+      "file_number": 4,
+      "filename": "dpiit_startup_ecosystem.json",
+      "description": "Startup registrations, sector distribution, government policies",
+      "records": 28
+    },
+    {
+      "file_number": 5,
+      "filename": "digital_infrastructure.json",
+      "description": "Internet, broadband, UPI, e-commerce metrics",
+      "records": 24
+    },
+    {
+      "file_number": 6,
+      "filename": "consumer_expenditure.json",
+      "description": "NSSO MPCE data, spending category breakdown",
+      "records": 33
+    },
+    {
+      "file_number": 7,
+      "filename": "sector_market_size.json",
+      "description": "20 sector TAM/SAM with CAGR and growth drivers",
+      "records": 20
+    },
+    {
+      "file_number": 8,
+      "filename": "regulatory_compliance.json",
+      "description": "Sector-wise regulation, compliance complexity scores",
+      "records": 14
+    },
+    {
+      "file_number": 9,
+      "filename": "google_trends_reference.json",
+      "description": "Query templates, keywords, interpretation guide",
+      "records": 16
+    },
+    {
+      "file_number": 10,
+      "filename": "competition_density_proxy.json",
+      "description": "JustDial method, illustrative listing counts",
+      "records": 7
+    },
+    {
+      "file_number": 11,
+      "filename": "opportunity_score_engine.json",
+      "description": "Pre-computed base opportunity scores for 28 cities",
+      "records": 28
+    },
+    {
+      "file_number": 12,
+      "filename": "demographic_reference.json",
+      "description": "National demographics, age-wise internet users, language data",
+      "records": 18
+    },
+    {
+      "file_number": 13,
+      "filename": "financial_inclusion.json",
+      "description": "Jan Dhan, demat, SIP, credit cards, insurance, MSME credit gap",
+      "records": 12
+    },
+    {
+      "file_number": 14,
+      "filename": "government_schemes.json",
+      "description": "12 major govt schemes mapped to startup sectors",
+      "records": 12
+    },
+    {
+      "file_number": 15,
+      "filename": "data_sources_directory.json",
+      "description": "22 data source URLs with refresh schedule",
+      "records": 22
+    }
+  ],
+  "total_data_points_approximate": 850,
+  "data_confidence": {
+    "government_verified_pct": 70,
+    "industry_report_derived_pct": 20,
+    "estimated_derived_pct": 10
+  },
+  "usage_workflow": [
+    "STEP 1: Receive Startup Idea",
+    "STEP 2: Identify Sector → sector_market_size.json",
+    "STEP 3: Identify Geography → city_master_data.json",
+    "STEP 4: Check Behavior → mindset_matrix.json",
+    "STEP 5: Validate State Economics → state_economic_indicators.json",
+    "STEP 6: Check Startup Ecosystem → dpiit_startup_ecosystem.json",
+    "STEP 7: Validate Digital Readiness → digital_infrastructure.json",
+    "STEP 8: Check Affordability → consumer_expenditure.json",
+    "STEP 9: Check Regulatory Risk → regulatory_compliance.json",
+    "STEP 10: Compute Opportunity Score → opportunity_score_engine.json",
+    "STEP 11: Align with Govt Schemes → government_schemes.json",
+    "STEP 12: Generate Full Validation Report"
+  ]
+}
+

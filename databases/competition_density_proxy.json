@@ -1,0 +1,124 @@
+{
+  "dataset_name": "Competition Density Proxy Data (JustDial Method)",
+  "version": "1.0",
+  "last_updated": "2024-12",
+  "sources": [
+    "JustDial.com (illustrative listings count)",
+    "Google Maps business listings"
+  ],
+  "methodology": {
+    "description": "JustDial listing counts serve as a proxy for local business/service density. Not a startup database but indicates competitive landscape.",
+    "steps": [
+      "Go to justdial.com",
+      "Select target city",
+      "Search target category",
+      "Note total number of listings",
+      "Repeat for 5-8 cities",
+      "Normalize by population to get density per lakh"
+    ],
+    "competition_intensity_formula": "Competition Intensity = JustDial Listings in Category / City Population in Lakhs",
+    "intensity_scale": {
+      "above_500_per_lakh": "Hyper-competitive (Red zone)",
+      "200_to_500_per_lakh": "Competitive (need differentiation)",
+      "50_to_200_per_lakh": "Moderate (opportunity exists)",
+      "below_50_per_lakh": "Under-served (blue ocean or no demand)"
+    }
+  },
+  "illustrative_data": {
+    "note": "These are approximate listing counts from JustDial for illustration. Refresh by querying live.",
+    "categories": [
+      {
+        "category": "Fitness / Gym",
+        "listings": {
+          "Mumbai": 12500,
+          "Delhi": 10800,
+          "Bengaluru": 6200,
+          "Hyderabad": 4800,
+          "Chennai": 5500,
+          "Pune": 4200,
+          "Kolkata": 3800,
+          "Ahmedabad": 2800
+        }
+      },
+      {
+        "category": "Restaurants",
+        "listings": {
+          "Mumbai": 45000,
+          "Delhi": 42000,
+          "Bengaluru": 28000,
+          "Hyderabad": 22000,
+          "Chennai": 25000,
+          "Pune": 18000,
+          "Kolkata": 20000,
+          "Ahmedabad": 14000
+        }
+      },
+      {
+        "category": "CA / Tax Services",
+        "listings": {
+          "Mumbai": 8500,
+          "Delhi": 9200,
+          "Bengaluru": 5500,
+          "Hyderabad": 3800,
+          "Chennai": 4200,
+          "Pune": 4800,
+          "Kolkata": 3200,
+          "Ahmedabad": 3500
+        }
+      },
+      {
+        "category": "Coaching / Tuition Centers",
+        "listings": {
+          "Mumbai": 15000,
+          "Delhi": 18000,
+          "Bengaluru": 8500,
+          "Hyderabad": 6200,
+          "Chennai": 8000,
+          "Pune": 7200,
+          "Kolkata": 6500,
+          "Ahmedabad": 4800
+        }
+      },
+      {
+        "category": "Logistics / Packers & Movers",
+        "listings": {
+          "Mumbai": 6800,
+          "Delhi": 8500,
+          "Bengaluru": 4200,
+          "Hyderabad": 3500,
+          "Chennai": 3800,
+          "Pune": 3200,
+          "Kolkata": 2800,
+          "Ahmedabad": 2200
+        }
+      },
+      {
+        "category": "Health Clinics / Diagnostic Centers",
+        "listings": {
+          "Mumbai": 18000,
+          "Delhi": 16000,
+          "Bengaluru": 9500,
+          "Hyderabad": 7200,
+          "Chennai": 10000,
+          "Pune": 6800,
+          "Kolkata": 7500,
+          "Ahmedabad": 5200
+        }
+      },
+      {
+        "category": "Real Estate Agents",
+        "listings": {
+          "Mumbai": 12000,
+          "Delhi": 14000,
+          "Bengaluru": 7800,
+          "Hyderabad": 5500,
+          "Chennai": 4800,
+          "Pune": 6200,
+          "Kolkata": 4200,
+          "Ahmedabad": 4500
+        }
+      }
+    ]
+  }
+}
+

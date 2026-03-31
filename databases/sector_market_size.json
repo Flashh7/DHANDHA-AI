@@ -1,0 +1,161 @@
+{
+  "dataset_name": "Sector-wise Market Size Data - India TAM Reference",
+  "version": "1.0",
+  "last_updated": "2024-12",
+  "sources": [
+    "IBEF Sector Reports (ibef.org)",
+    "NASSCOM Reports",
+    "NITI Aayog",
+    "IRDAI",
+    "SEBI",
+    "AMFI",
+    "RedSeer Consulting",
+    "Inc42",
+    "FICCI-EY Media Report",
+    "BCG India Reports"
+  ],
+  "sectors": [
+    {
+      "sector": "E-commerce",
+      "market_size_usd_bn_2024": 77.5,
+      "cagr_2024_2030_pct": 20,
+      "key_growth_driver": "Digital adoption, Tier 2-3 growth",
+      "source": "IBEF"
+    },
+    {
+      "sector": "FinTech",
+      "market_size_usd_bn_2024": 31,
+      "projected_2030_usd_bn": 150,
+      "cagr_2024_2030_pct": 25,
+      "key_growth_driver": "UPI, Digital lending, Insurance",
+      "source": "IBEF, BCG"
+    },
+    {
+      "sector": "EdTech",
+      "market_size_usd_bn_2024": 6.5,
+      "cagr_2024_2030_pct": 15,
+      "key_growth_driver": "NEP 2020, Skills gap, Online",
+      "source": "IBEF, RedSeer"
+    },
+    {
+      "sector": "HealthTech",
+      "market_size_usd_bn_2024": 13.5,
+      "cagr_2024_2030_pct": 25,
+      "key_growth_driver": "Telemedicine, Digital health records",
+      "source": "IBEF, NITI Aayog"
+    },
+    {
+      "sector": "FoodTech (Online Delivery)",
+      "market_size_usd_bn_2024": 8.5,
+      "cagr_2024_2030_pct": 20,
+      "key_growth_driver": "Quick commerce, Cloud kitchens",
+      "source": "RedSeer"
+    },
+    {
+      "sector": "AgriTech",
+      "market_size_usd_bn_2024": 4.5,
+      "cagr_2024_2030_pct": 30,
+      "key_growth_driver": "Farm-to-fork, Input marketplace",
+      "source": "NASSCOM"
+    },
+    {
+      "sector": "Logistics/Supply Chain Tech",
+      "market_size_usd_bn_2024": 11,
+      "cagr_2024_2030_pct": 18,
+      "key_growth_driver": "GST unification, E-commerce",
+      "source": "IBEF"
+    },
+    {
+      "sector": "SaaS (Indian companies)",
+      "market_size_usd_bn_2024": 16,
+      "cagr_2024_2030_pct": 22.5,
+      "key_growth_driver": "Global demand, India pricing advantage",
+      "source": "NASSCOM"
+    },
+    {
+      "sector": "CleanTech/EV",
+      "market_size_usd_bn_2024": 7.5,
+      "cagr_2024_2030_pct": 37.5,
+      "key_growth_driver": "Govt subsidies, EV mandate",
+      "source": "IBEF, NITI Aayog"
+    },
+    {
+      "sector": "InsurTech",
+      "market_size_usd_bn_2024": 9,
+      "cagr_2024_2030_pct": 22,
+      "key_growth_driver": "Low penetration, Digital distribution",
+      "source": "IRDAI, IBEF"
+    },
+    {
+      "sector": "PropTech",
+      "market_size_usd_bn_2024": 3.5,
+      "cagr_2024_2030_pct": 18,
+      "key_growth_driver": "RERA, Urbanization, NRI investment",
+      "source": "IBEF"
+    },
+    {
+      "sector": "D2C Brands",
+      "market_size_usd_bn_2024": 20,
+      "cagr_2024_2030_pct": 25,
+      "key_growth_driver": "Social commerce, Instagram/WhatsApp",
+      "source": "Inc42"
+    },
+    {
+      "sector": "Gaming (Online)",
+      "market_size_usd_bn_2024": 3.5,
+      "cagr_2024_2030_pct": 20,
+      "key_growth_driver": "Youth demographics, Mobile-first",
+      "source": "FICCI-EY"
+    },
+    {
+      "sector": "SpaceTech",
+      "market_size_usd_bn_2024": 0.4,
+      "cagr_2024_2030_pct": 35,
+      "key_growth_driver": "ISRO privatization, IN-SPACe",
+      "source": "ISRO, IBEF"
+    },
+    {
+      "sector": "WealthTech",
+      "market_size_usd_bn_2024": 5.5,
+      "cagr_2024_2030_pct": 30,
+      "key_growth_driver": "Demat account growth (12 Cr+), SIP culture",
+      "source": "SEBI, AMFI"
+    },
+    {
+      "sector": "Travel/Tourism Tech",
+      "market_size_usd_bn_2024": 13.5,
+      "cagr_2024_2030_pct": 15,
+      "key_growth_driver": "Revenge travel, Digital booking",
+      "source": "IBEF"
+    },
+    {
+      "sector": "LegalTech",
+      "market_size_usd_bn_2024": 0.9,
+      "cagr_2024_2030_pct": 20,
+      "key_growth_driver": "Digitization of courts, Compliance",
+      "source": "Industry reports"
+    },
+    {
+      "sector": "HRTech",
+      "market_size_usd_bn_2024": 2.5,
+      "cagr_2024_2030_pct": 18,
+      "key_growth_driver": "Gig economy, Remote work",
+      "source": "NASSCOM"
+    },
+    {
+      "sector": "Cybersecurity",
+      "market_size_usd_bn_2024": 4.5,
+      "cagr_2024_2030_pct": 25,
+      "key_growth_driver": "DPDP Act, Digital India push",
+      "source": "NASSCOM, DSCI"
+    },
+    {
+      "sector": "Mental Health / Wellness",
+      "market_size_usd_bn_2024": 1.75,
+      "cagr_2024_2030_pct": 22,
+      "key_growth_driver": "COVID awareness, Corporate wellness",
+      "source": "WHO India, NIMHANS"
+    }
+  ]
+}
+

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhandha.ai — Validate Your Startup Idea</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #F5F0E8;
+      --ink: #0D0D0D;
+      --muted: #666;
+      --saffron: #FF6B00;
+      --border: #E0D8CC;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', 'Segoe UI', Arial, sans-serif;
+      min-height: 100vh;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 1.4rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--saffron); }
+
+    .main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px 60px;
+    }
+
+    .hero {
+      padding: 24px 0 40px;
+    }
+
+    .hero-title {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(2.8rem, 5vw, 4.6rem);
+      line-height: 1;
+      letter-spacing: -1.8px;
+      margin-bottom: 18px;
+    }
+
+    .hero-sub {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 740px;
+      line-height: 1.8;
+    }
+
+    .panel {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 20px 60px rgba(13,13,13,0.08);
+    }
+
+    .panel h2 {
+      font-family: 'Newsreader', serif;
+      margin-bottom: 14px;
+      font-size: 1.8rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    input, textarea, select {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 0.95rem;
+      color: var(--ink);
+      background: var(--white);
+      outline: none;
+      font-family: inherit;
+    }
+
+    textarea { min-height: 160px; resize: vertical; }
+
+    .radio-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    .button-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 4px solid rgba(255, 107, 0, 0.16);
+      border-top-color: var(--saffron);
+      border-radius: 50%;
+      animation: spin 0.85s linear infinite;
+    }
+
+    button {
+      border: none;
+      border-radius: 12px;
+      padding: 16px 30px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: var(--saffron);
+      color: var(--white);
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover { transform: translateY(-1px); }
+
+    button.loading {
+      background: linear-gradient(135deg, #ff8a2b, #ff5800);
+      box-shadow: 0 16px 28px rgba(255, 107, 0, 0.22);
+      cursor: wait;
+      animation: pulse 1.2s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    .help-text {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .status {
+      margin-top: 18px;
+      font-weight: 600;
+      color: var(--saffron);
+    }
+
+    .result-card {
+      margin-top: 32px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      padding: 28px;
+      background: var(--white);
+      box-shadow: 0 18px 60px rgba(13,13,13,0.08);
+    }
+
+    .result-card h3 {
+      font-family: 'Newsreader', serif;
+      margin-bottom: 14px;
+      font-size: 1.4rem;
+    }
+
+    .result-body,
+    #rawResult {
+      font-family: 'DM Sans', sans-serif;
+      white-space: normal;
+      word-break: break-word;
+      color: #2c2c2c;
+      line-height: 1.85;
+      font-size: 1rem;
+      background: #fdfaf4;
+      border-radius: 18px;
+      padding: 24px;
+      border: 1px solid rgba(224, 216, 204, 0.8);
+    }
+
+    .result-body h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.9rem;
+      color: #0d0d0d;
+      font-family: 'Newsreader', serif;
+      font-size: 1.25rem;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+
+    .result-body h4 {
+      margin-top: 1.2rem;
+      margin-bottom: 0.75rem;
+      color: #111827;
+      font-family: 'Newsreader', serif;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+
+    .result-body p {
+      margin: 0.75rem 0;
+      color: #3b3b3b;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .result-body ul {
+      margin: 0.6rem 0 1rem 1.35rem;
+      padding: 0;
+      list-style-type: disc;
+      color: #3b3b3b;
+    }
+
+    .result-body li {
+      margin: 0.35rem 0;
+      line-height: 1.75;
+    }
+
+    .result-body blockquote {
+      margin: 1.25rem 0;
+      padding: 16px 20px;
+      border-left: 4px solid var(--saffron);
+      background: rgba(255, 235, 205, 0.45);
+      font-style: italic;
+      color: #393939;
+      border-radius: 14px;
+    }
+
+    .result-body strong {
+      color: #111827;
+    }
+
+    .result-spacer {
+      height: 1.3rem;
+    }
+
+    #rawResult {
+      white-space: pre-wrap;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .download-btn {
+      margin-top: 22px;
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 999px;
+      padding: 14px 24px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .hidden { display: none !important; }
+
+    @media (max-width: 860px) {
+      .hero-title { font-size: 3rem; }
+      .panel { padding: 24px; }
+      nav { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">Dhandha<span>.ai</span></a>
+  </nav>
+
+  <main class="main">
+    <section class="hero">
+      <h1 class="hero-title">Get the Indian VC verdict on your idea — no pitch deck needed.</h1>
+      <p class="hero-sub">Paste your startup concept and the engine will score it using Indian market assumptions, city-level intelligence, social/search signals, and brutally honest VC-style feedback.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Startup idea validation</h2>
+
+      <div class="field">
+        <label for="idea">Startup idea</label>
+        <textarea id="idea" placeholder="Describe your idea in one sentence..."></textarea>
+      </div>
+
+
+      <div id="credentialsPanel">
+        <div class="field">
+          <label for="apiUrl">NVIDIA API URL</label>
+          <input id="apiUrl" type="text" placeholder="https://integrate.api.nvidia.com/v1" />
+        </div>
+        <div class="field">
+          <label for="apiKey">NVIDIA API key</label>
+          <input id="apiKey" type="password" placeholder="nvidia-..." />
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="analyzeBtn">Analyze idea</button>
+        <div id="spinner" class="spinner hidden" aria-hidden="true"></div>
+      </div>
+
+      <div id="status" class="status"></div>
+
+      <div class="result-card hidden" id="resultCard">
+        <h3>Analysis result</h3>
+        <div id="result" class="result-body"></div>
+        <button id="downloadBtn" class="download-btn hidden">Download Full Report (PDF)</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

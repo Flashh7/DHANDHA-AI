@@ -1,0 +1,166 @@
+{
+  "dataset_name": "Consumer Expenditure Data - NSSO 79th Round",
+  "version": "1.0",
+  "last_updated": "2024-12",
+  "reference_period": "2022-23",
+  "sources": [
+    "MoSPI - NSSO 79th Round Fact Sheet",
+    "NSSO Household Consumer Expenditure Survey 2022-23"
+  ],
+  "all_india": {
+    "urban_mpce_inr": 5040,
+    "rural_mpce_inr": 3180,
+    "urban_rural_ratio": 1.58,
+    "top_urban_spending_category": "Food (39%), Housing (10%)"
+  },
+  "state_wise_mpce": [
+    {
+      "state": "Delhi",
+      "urban_mpce_inr": 7340,
+      "rural_mpce_inr": null,
+      "urban_rural_ratio": null,
+      "top_spending_urban": ["Housing", "Transport"]
+    },
+    {
+      "state": "Goa",
+      "urban_mpce_inr": 6850,
+      "rural_mpce_inr": 4480,
+      "urban_rural_ratio": 1.53,
+      "top_spending_urban": ["Food", "Housing"]
+    },
+    {
+      "state": "Kerala",
+      "urban_mpce_inr": 6420,
+      "rural_mpce_inr": 5510,
+      "urban_rural_ratio": 1.17,
+      "top_spending_urban": ["Food", "Health", "Education"]
+    },
+    {
+      "state": "Haryana",
+      "urban_mpce_inr": 6380,
+      "rural_mpce_inr": 4820,
+      "urban_rural_ratio": 1.32,
+      "top_spending_urban": ["Food", "Transport", "Housing"]
+    },
+    {
+      "state": "Tamil Nadu",
+      "urban_mpce_inr": 5650,
+      "rural_mpce_inr": 3850,
+      "urban_rural_ratio": 1.47,
+      "top_spending_urban": ["Food", "Housing", "Health"]
+    },
+    {
+      "state": "Karnataka",
+      "urban_mpce_inr": 5890,
+      "rural_mpce_inr": 3680,
+      "urban_rural_ratio": 1.6,
+      "top_spending_urban": ["Food", "Housing", "Transport"]
+    },
+    {
+      "state": "Maharashtra",
+      "urban_mpce_inr": 5680,
+      "rural_mpce_inr": 3480,
+      "urban_rural_ratio": 1.63,
+      "top_spending_urban": ["Food", "Housing", "Transport"]
+    },
+    {
+      "state": "Gujarat",
+      "urban_mpce_inr": 5150,
+      "rural_mpce_inr": 3580,
+      "urban_rural_ratio": 1.44,
+      "top_spending_urban": ["Food", "Housing", "Clothing"]
+    },
+    {
+      "state": "Telangana",
+      "urban_mpce_inr": 5820,
+      "rural_mpce_inr": 3420,
+      "urban_rural_ratio": 1.7,
+      "top_spending_urban": ["Food", "Housing", "Education"]
+    },
+    {
+      "state": "Punjab",
+      "urban_mpce_inr": 5380,
+      "rural_mpce_inr": 4280,
+      "urban_rural_ratio": 1.26,
+      "top_spending_urban": ["Food", "Transport", "Health"]
+    },
+    {
+      "state": "Uttarakhand",
+      "urban_mpce_inr": 4850,
+      "rural_mpce_inr": 3680,
+      "urban_rural_ratio": 1.32,
+      "top_spending_urban": ["Food", "Education", "Housing"]
+    },
+    {
+      "state": "West Bengal",
+      "urban_mpce_inr": 4250,
+      "rural_mpce_inr": 2850,
+      "urban_rural_ratio": 1.49,
+      "top_spending_urban": ["Food", "Housing", "Fuel"]
+    },
+    {
+      "state": "Rajasthan",
+      "urban_mpce_inr": 4480,
+      "rural_mpce_inr": 3120,
+      "urban_rural_ratio": 1.44,
+      "top_spending_urban": ["Food", "Housing", "Clothing"]
+    },
+    {
+      "state": "Madhya Pradesh",
+      "urban_mpce_inr": 4180,
+      "rural_mpce_inr": 2680,
+      "urban_rural_ratio": 1.56,
+      "top_spending_urban": ["Food", "Housing", "Health"]
+    },
+    {
+      "state": "Uttar Pradesh",
+      "urban_mpce_inr": 4150,
+      "rural_mpce_inr": 2650,
+      "urban_rural_ratio": 1.57,
+      "top_spending_urban": ["Food", "Housing", "Education"]
+    },
+    {
+      "state": "Andhra Pradesh",
+      "urban_mpce_inr": 5150,
+      "rural_mpce_inr": 3380,
+      "urban_rural_ratio": 1.52,
+      "top_spending_urban": ["Food", "Housing", "Health"]
+    },
+    {
+      "state": "Odisha",
+      "urban_mpce_inr": 3880,
+      "rural_mpce_inr": 2520,
+      "urban_rural_ratio": 1.54,
+      "top_spending_urban": ["Food", "Housing", "Fuel"]
+    },
+    {
+      "state": "Bihar",
+      "urban_mpce_inr": 3150,
+      "rural_mpce_inr": 2150,
+      "urban_rural_ratio": 1.47,
+      "top_spending_urban": ["Food", "Housing", "Fuel"]
+    },
+    {
+      "state": "Jharkhand",
+      "urban_mpce_inr": 3480,
+      "rural_mpce_inr": 2280,
+      "urban_rural_ratio": 1.53,
+      "top_spending_urban": ["Food", "Housing", "Fuel"]
+    },
+    {
+      "state": "Assam",
+      "urban_mpce_inr": 3720,
+      "rural_mpce_inr": 2580,
+      "urban_rural_ratio": 1.44,
+      "top_spending_urban": ["Food", "Housing", "Transport"]
+    },
+    {
+      "state": "Chhattisgarh",
+      "urban_mpce_inr": 3580,
+      "rural_mpce_inr": 2350,
+      "urban_rural_ratio": 1.52,
+      "top_spending_urban": ["Food", "Housing", "Fuel"]
+    }
+  ]
+}
+

@@ -1,0 +1,184 @@
+{
+  "dataset_name": "Regulatory and Compliance Reference by Sector",
+  "version": "1.0",
+  "last_updated": "2024-12",
+  "sources": [
+    "RBI Circulars",
+    "SEBI Regulations",
+    "MoHFW Guidelines",
+    "MoE / UGC / AICTE",
+    "FSSAI",
+    "DPIIT FDI Policy",
+    "IRDAI",
+    "MeitY IT Act and Rules",
+    "DGCA Drone Rules",
+    "State-level legislation"
+  ],
+  "sectors": [
+    {
+      "sector": "FinTech",
+      "primary_regulator": "RBI, SEBI",
+      "key_regulations": [
+        "PPI Guidelines",
+        "Digital Lending Rules (Sep 2022)",
+        "NBFC Rules",
+        "Payment Aggregator Guidelines"
+      ],
+      "compliance_complexity": 8,
+      "recent_policy_impact": "RBI digital lending crackdown; UPI 30% market cap rule; PA/PG licensing mandatory"
+    },
+    {
+      "sector": "HealthTech",
+      "primary_regulator": "MoHFW, CDSCO",
+      "key_regulations": [
+        "Telemedicine Practice Guidelines 2020",
+        "DPDP Act (health data)",
+        "Drugs & Cosmetics Act",
+        "ABDM Integration Requirements"
+      ],
+      "compliance_complexity": 7,
+      "recent_policy_impact": "Telemedicine legalized post-COVID; ABDM ecosystem push; E-pharmacy regulation pending"
+    },
+    {
+      "sector": "EdTech",
+      "primary_regulator": "MoE, UGC, AICTE",
+      "key_regulations": [
+        "NEP 2020",
+        "UGC Online Degree Regulations 2022",
+        "AICTE Approval Process"
+      ],
+      "compliance_complexity": 6,
+      "recent_policy_impact": "Degree-granting online courses allowed; SWAYAM platform; National Credit Framework"
+    },
+    {
+      "sector": "FoodTech",
+      "primary_regulator": "FSSAI",
+      "key_regulations": [
+        "FSSAI License (Central/State)",
+        "Food Safety Standards Act",
+        "Packaging & Labelling Rules",
+        "Cloud Kitchen Guidelines"
+      ],
+      "compliance_complexity": 6,
+      "recent_policy_impact": "Cloud kitchen licensing formalized; Calorie display mandate; Fortification rules"
+    },
+    {
+      "sector": "AgriTech",
+      "primary_regulator": "MoA, State APMCs",
+      "key_regulations": [
+        "APMC Acts (state-level, fragmented)",
+        "E-NAM Platform Rules",
+        "Essential Commodities Act",
+        "Seed & Fertilizer Regulations"
+      ],
+      "compliance_complexity": 7,
+      "recent_policy_impact": "Farm Bills repealed 2021; State-level mandi regulation still fragmented; E-NAM expansion"
+    },
+    {
+      "sector": "E-commerce",
+      "primary_regulator": "DPIIT, MCA",
+      "key_regulations": [
+        "E-commerce FDI Policy 2020 (Press Note 2)",
+        "Consumer Protection (E-Commerce) Rules 2020",
+        "Country of Origin mandate",
+        "Marketplace vs Inventory model restrictions"
+      ],
+      "compliance_complexity": 7,
+      "recent_policy_impact": "No inventory model for FDI-backed marketplaces; Flash sale restrictions proposed; ONDC open network"
+    },
+    {
+      "sector": "CleanTech/EV",
+      "primary_regulator": "MoRTH, MoP, MNRE",
+      "key_regulations": [
+        "FAME-II Subsidy (now PM E-DRIVE)",
+        "Battery Swapping Policy",
+        "AIS Standards for EVs",
+        "PLI for Advanced Chemistry Cells"
+      ],
+      "compliance_complexity": 6,
+      "recent_policy_impact": "PLI for batteries operational; Charging infrastructure mandates; State EV policies active"
+    },
+    {
+      "sector": "Insurance/InsurTech",
+      "primary_regulator": "IRDAI",
+      "key_regulations": [
+        "IRDAI Sandbox Framework",
+        "Insurance Web Aggregator Guidelines",
+        "Bima Sugam Platform Rules",
+        "Revised Broker Regulations 2024"
+      ],
+      "compliance_complexity": 8,
+      "recent_policy_impact": "Bima Sugam digital marketplace; Composite license discussions; IRDAI sandbox for innovation"
+    },
+    {
+      "sector": "Real Estate/PropTech",
+      "primary_regulator": "State RERAs",
+      "key_regulations": [
+        "RERA Act 2016",
+        "State-specific RERA Rules",
+        "Stamp Duty Regulations"
+      ],
+      "compliance_complexity": 5,
+      "recent_policy_impact": "Mandatory RERA registration for project listing; Digital RERA compliance push"
+    },
+    {
+      "sector": "Gaming (Online)",
+      "primary_regulator": "MeitY, State Laws",
+      "key_regulations": [
+        "IT (Intermediary Guidelines) 2023",
+        "State-specific gambling/betting laws",
+        "GST on Online Gaming (28% on full face value)"
+      ],
+      "compliance_complexity": 7,
+      "recent_policy_impact": "GST 28% on full face value (Oct 2023); State-by-state legality varies; SRO recognition pending"
+    },
+    {
+      "sector": "Data/SaaS",
+      "primary_regulator": "MeitY",
+      "key_regulations": [
+        "DPDP Act 2023",
+        "IT Act 2000",
+        "IT (Intermediary Guidelines) 2021/2023",
+        "Data Localization Requirements"
+      ],
+      "compliance_complexity": 6,
+      "recent_policy_impact": "DPDP Act implementation rules pending; Consent framework being defined; Cross-border data flow norms"
+    },
+    {
+      "sector": "Crypto/Web3",
+      "primary_regulator": "RBI, MoF",
+      "key_regulations": [
+        "30% tax on crypto gains (Section 115BBH)",
+        "1% TDS on crypto transfers (Section 194S)",
+        "No specific regulatory framework yet"
+      ],
+      "compliance_complexity": 9,
+      "recent_policy_impact": "Effective discouragement through heavy taxation; RBI CBDC (e-Rupee) pilot; No ban but no clarity"
+    },
+    {
+      "sector": "Drone Tech",
+      "primary_regulator": "DGCA",
+      "key_regulations": [
+        "Drone Rules 2021 (Liberalized)",
+        "PLI Scheme for Drones",
+        "Type Certificate Requirements",
+        "Remote Pilot License"
+      ],
+      "compliance_complexity": 5,
+      "recent_policy_impact": "Liberalized regime post-2021; PLI operational; BVLOS trials approved; Defence drone procurement"
+    },
+    {
+      "sector": "Social Media/Content",
+      "primary_regulator": "MeitY",
+      "key_regulations": [
+        "IT (Intermediary Guidelines) 2021, amended 2023",
+        "Content Moderation Mandate",
+        "Grievance Appellate Committee",
+        "Fact-check unit compliance"
+      ],
+      "compliance_complexity": 6,
+      "recent_policy_impact": "Mandatory content moderation; Chief Compliance Officer required for SSMIs; Fact-check compliance debated"
+    }
+  ]
+}
+

@@ -1,0 +1,115 @@
+{
+  "dataset_name": "Government Scheme Alignment Reference",
+  "version": "1.0",
+  "last_updated": "2024-12",
+  "sources": [
+    "Union Budget 2024-25",
+    "DPIIT",
+    "MeitY",
+    "MoHFW",
+    "NITI Aayog",
+    "MoMSME",
+    "MoHUA",
+    "Ministry of Agriculture",
+    "Ministry of Commerce"
+  ],
+  "schemes": [
+    {
+      "scheme": "Digital India",
+      "ministry": "MeitY",
+      "budget_or_scale": "₹14,903 Cr (FY25)",
+      "startup_opportunity_sectors": ["GovTech", "DigiLocker Integrations", "Cybersecurity", "Digital Infrastructure"],
+      "status": "Active",
+      "relevance_note": "Core digital infrastructure push — any startup building on India Stack (Aadhaar, UPI, DigiLocker) benefits"
+    },
+    {
+      "scheme": "Ayushman Bharat / ABDM",
+      "ministry": "MoHFW",
+      "budget_or_scale": "55 Cr+ Ayushman cards issued; ABDM open APIs",
+      "startup_opportunity_sectors": ["HealthTech", "Hospital SaaS", "Digital Health Records", "Telemedicine"],
+      "status": "Active",
+      "relevance_note": "ABHA (Ayushman Bharat Health Account) creating unified health ID — HealthTech startups can integrate"
+    },
+    {
+      "scheme": "PM Vishwakarma",
+      "ministry": "MoMSME",
+      "budget_or_scale": "₹13,000 Cr",
+      "startup_opportunity_sectors": ["Artisan Marketplace", "Skill Tech", "Micro-lending", "D2C Handicraft"],
+      "status": "Active",
+      "relevance_note": "18 traditional crafts covered — marketplace and fintech opportunity for artisan segment"
+    },
+    {
+      "scheme": "ONDC (Open Network for Digital Commerce)",
+      "ministry": "DPIIT",
+      "budget_or_scale": "Open network — unbundled e-commerce",
+      "startup_opportunity_sectors": ["E-commerce", "Logistics", "Hyperlocal", "Seller Tools"],
+      "status": "Active",
+      "relevance_note": "Decentralized alternative to Amazon/Flipkart — buyer/seller apps can plug into ONDC protocol"
+    },
+    {
+      "scheme": "National Education Policy (NEP) 2020",
+      "ministry": "MoE",
+      "budget_or_scale": "Pan-India structural reform",
+      "startup_opportunity_sectors": ["EdTech", "Skill Development", "Assessment Tech", "Regional Language Content"],
+      "status": "Active",
+      "relevance_note": "Multi-disciplinary education, credit bank, online degrees recognized — EdTech integration pathways"
+    },
+    {
+      "scheme": "PLI Schemes (14 Sectors)",
+      "ministry": "Various (MoCI, MeitY, MoHI, etc.)",
+      "budget_or_scale": "₹1.97 Lakh Cr total outlay",
+      "startup_opportunity_sectors": ["Manufacturing Tech", "Supply Chain", "Industrial IoT", "Component Startups"],
+      "status": "Active",
+      "relevance_note": "Sectors: Electronics, Pharma, Textile, Auto, Solar, Drones, etc. — B2B startup opportunities"
+    },
+    {
+      "scheme": "FAME-II / PM E-DRIVE",
+      "ministry": "MoHI (Ministry of Heavy Industries)",
+      "budget_or_scale": "₹11,500 Cr",
+      "startup_opportunity_sectors": ["EV Manufacturing", "Battery Tech", "Charging Infrastructure", "Fleet Management"],
+      "status": "Active",
+      "relevance_note": "Demand incentives for EVs; charging infra subsidies; battery swapping policy support"
+    },
+    {
+      "scheme": "Smart Cities Mission",
+      "ministry": "MoHUA",
+      "budget_or_scale": "100 cities selected",
+      "startup_opportunity_sectors": ["IoT", "Urban Tech", "Waste Management", "Smart Mobility", "GovTech"],
+      "status": "Active",
+      "relevance_note": "City-level tech procurement ongoing — smart parking, water management, surveillance, traffic AI"
+    },
+    {
+      "scheme": "PM Kisan / Agri Stack",
+      "ministry": "Ministry of Agriculture",
+      "budget_or_scale": "₹60,000 Cr+ (PM-KISAN disbursed); Agri Stack in pilot",
+      "startup_opportunity_sectors": ["AgriTech", "Farm Data Platforms", "Precision Agriculture", "Agri Insurance"],
+      "status": "Active",
+      "relevance_note": "Agri Stack = farmers database + land records + crop data — platform for AgriTech integration"
+    },
+    {
+      "scheme": "GeM Portal (Government e-Marketplace)",
+      "ministry": "Ministry of Commerce",
+      "budget_or_scale": "₹3.5 Lakh Cr+ GMV; 60 Lakh+ sellers",
+      "startup_opportunity_sectors": ["B2G SaaS", "Procurement Tech", "Compliance Tools", "Catalogue Management"],
+      "status": "Active",
+      "relevance_note": "Startups can sell directly to government; no prior experience needed if DPIIT-recognized"
+    },
+    {
+      "scheme": "National Logistics Policy",
+      "ministry": "MoCIT (Commerce & Industry)",
+      "budget_or_scale": "Pan-India; target to reduce logistics cost from 14% to 8% of GDP",
+      "startup_opportunity_sectors": ["Logistics Tech", "Warehousing", "Last-mile Delivery", "Freight Aggregation"],
+      "status": "Active",
+      "relevance_note": "Unified Logistics Interface Platform (ULIP) — API integration opportunity for logistics startups"
+    },
+    {
+      "scheme": "DPDP Act 2023 (Digital Personal Data Protection)",
+      "ministry": "MeitY",
+      "budget_or_scale": "Pan-India; rules being drafted (2024-25)",
+      "startup_opportunity_sectors": ["Privacy Tech", "Consent Management", "Data Governance SaaS", "Compliance Tools"],
+      "status": "Implementation Phase",
+      "relevance_note": "Every company handling personal data needs compliance — massive B2B SaaS opportunity"
+    }
+  ]
+}
+

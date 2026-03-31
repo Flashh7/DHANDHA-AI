@@ -1,0 +1,326 @@
+{
+  "dataset_name": "Mindset Matrix - Indian Consumer Behavioral Scoring",
+  "version": "1.0",
+  "last_updated": "2024-12",
+  "methodology": {
+    "description": "Behavioral scores constructed from multiple proxy indicators",
+    "scoring_scale": "1 to 10 (10 = highest / strongest)",
+    "negative_factors": [
+      "jugaad_presence",
+      "relationship_dependency",
+      "family_decision_influence"
+    ],
+    "proxy_sources": {
+      "problem_pain_level": "Consumer complaint data (NCH, consumer forums), NSSO unmet needs data",
+      "willingness_to_pay": "Per capita discretionary spending (NSSO), premium brand penetration (Nielsen/Kantar India)",
+      "trust_speed": "Digital payment adoption rate (NPCI), e-commerce penetration (IBEF), new brand trial rates",
+      "jugaad_presence": "Informal economy share (MSME unregistered ratio), cash transaction prevalence, grey market reports",
+      "relationship_dependency": "Referral-driven purchase patterns, community commerce data, WhatsApp commerce usage",
+      "family_decision_influence": "Household decision-making surveys (NFHS-5), joint family proportion (Census)"
+    },
+    "composite_formula": "CBS = (Problem_Pain × 0.15) + (WTP × 0.25) + (Trust_Speed × 0.25) − (Jugaad × 0.15) − (Relationship_Dep × 0.10) − (Family_Influence × 0.10) + 5 (base offset), normalized to 1-10"
+  },
+  "cities": [
+    {
+      "city": "Mumbai",
+      "problem_pain_level": 8,
+      "willingness_to_pay": 8,
+      "trust_speed": 8,
+      "jugaad_presence": 4,
+      "relationship_dependency": 5,
+      "family_decision_influence": 4,
+      "composite_behavior_score": 7.8
+    },
+    {
+      "city": "Delhi NCR",
+      "problem_pain_level": 8,
+      "willingness_to_pay": 7,
+      "trust_speed": 7,
+      "jugaad_presence": 6,
+      "relationship_dependency": 6,
+      "family_decision_influence": 5,
+      "composite_behavior_score": 6.8
+    },
+    {
+      "city": "Bengaluru",
+      "problem_pain_level": 7,
+      "willingness_to_pay": 9,
+      "trust_speed": 9,
+      "jugaad_presence": 3,
+      "relationship_dependency": 4,
+      "family_decision_influence": 3,
+      "composite_behavior_score": 8.5
+    },
+    {
+      "city": "Hyderabad",
+      "problem_pain_level": 7,
+      "willingness_to_pay": 8,
+      "trust_speed": 8,
+      "jugaad_presence": 4,
+      "relationship_dependency": 5,
+      "family_decision_influence": 5,
+      "composite_behavior_score": 7.5
+    },
+    {
+      "city": "Chennai",
+      "problem_pain_level": 7,
+      "willingness_to_pay": 7,
+      "trust_speed": 6,
+      "jugaad_presence": 4,
+      "relationship_dependency": 7,
+      "family_decision_influence": 6,
+      "composite_behavior_score": 6.5
+    },
+    {
+      "city": "Pune",
+      "problem_pain_level": 7,
+      "willingness_to_pay": 8,
+      "trust_speed": 8,
+      "jugaad_presence": 3,
+      "relationship_dependency": 5,
+      "family_decision_influence": 4,
+      "composite_behavior_score": 7.8
+    },
+    {
+      "city": "Kolkata",
+      "problem_pain_level": 8,
+      "willingness_to_pay": 5,
+      "trust_speed": 5,
+      "jugaad_presence": 7,
+      "relationship_dependency": 7,
+      "family_decision_influence": 7,
+      "composite_behavior_score": 5.0
+    },
+    {
+      "city": "Ahmedabad",
+      "problem_pain_level": 6,
+      "willingness_to_pay": 7,
+      "trust_speed": 6,
+      "jugaad_presence": 5,
+      "relationship_dependency": 7,
+      "family_decision_influence": 7,
+      "composite_behavior_score": 5.8
+    },
+    {
+      "city": "Jaipur",
+      "problem_pain_level": 7,
+      "willingness_to_pay": 6,
+      "trust_speed": 5,
+      "jugaad_presence": 6,
+      "relationship_dependency": 8,
+      "family_decision_influence": 8,
+      "composite_behavior_score": 5.0
+    },
+    {
+      "city": "Chandigarh",
+      "problem_pain_level": 6,
+      "willingness_to_pay": 8,
+      "trust_speed": 7,
+      "jugaad_presence": 4,
+      "relationship_dependency": 5,
+      "family_decision_influence": 5,
+      "composite_behavior_score": 7.0
+    },
+    {
+      "city": "Lucknow",
+      "problem_pain_level": 7,
+      "willingness_to_pay": 5,
+      "trust_speed": 4,
+      "jugaad_presence": 7,
+      "relationship_dependency": 8,
+      "family_decision_influence": 8,
+      "composite_behavior_score": 4.2
+    },
+    {
+      "city": "Kochi",
+      "problem_pain_level": 7,
+      "willingness_to_pay": 7,
+      "trust_speed": 7,
+      "jugaad_presence": 4,
+      "relationship_dependency": 6,
+      "family_decision_influence": 5,
+      "composite_behavior_score": 6.8
+    },
+    {
+      "city": "Indore",
+      "problem_pain_level": 7,
+      "willingness_to_pay": 6,
+      "trust_speed": 6,
+      "jugaad_presence": 5,
+      "relationship_dependency": 7,
+      "family_decision_influence": 6,
+      "composite_behavior_score": 5.8
+    },
+    {
+      "city": "Coimbatore",
+      "problem_pain_level": 6,
+      "willingness_to_pay": 7,
+      "trust_speed": 6,
+      "jugaad_presence": 4,
+      "relationship_dependency": 7,
+      "family_decision_influence": 6,
+      "composite_behavior_score": 6.2
+    },
+    {
+      "city": "Nagpur",
+      "problem_pain_level": 6,
+      "willingness_to_pay": 5,
+      "trust_speed": 5,
+      "jugaad_presence": 6,
+      "relationship_dependency": 7,
+      "family_decision_influence": 7,
+      "composite_behavior_score": 4.8
+    },
+    {
+      "city": "Visakhapatnam",
+      "problem_pain_level": 6,
+      "willingness_to_pay": 6,
+      "trust_speed": 5,
+      "jugaad_presence": 5,
+      "relationship_dependency": 7,
+      "family_decision_influence": 7,
+      "composite_behavior_score": 5.2
+    },
+    {
+      "city": "Bhopal",
+      "problem_pain_level": 6,
+      "willingness_to_pay": 5,
+      "trust_speed": 4,
+      "jugaad_presence": 7,
+      "relationship_dependency": 7,
+      "family_decision_influence": 7,
+      "composite_behavior_score": 4.2
+    },
+    {
+      "city": "Thiruvananthapuram",
+      "problem_pain_level": 6,
+      "willingness_to_pay": 7,
+      "trust_speed": 7,
+      "jugaad_presence": 4,
+      "relationship_dependency": 6,
+      "family_decision_influence": 5,
+      "composite_behavior_score": 6.5
+    },
+    {
+      "city": "Vadodara",
+      "problem_pain_level": 6,
+      "willingness_to_pay": 6,
+      "trust_speed": 6,
+      "jugaad_presence": 5,
+      "relationship_dependency": 7,
+      "family_decision_influence": 7,
+      "composite_behavior_score": 5.5
+    },
+    {
+      "city": "Surat",
+      "problem_pain_level": 7,
+      "willingness_to_pay": 7,
+      "trust_speed": 6,
+      "jugaad_presence": 5,
+      "relationship_dependency": 7,
+      "family_decision_influence": 6,
+      "composite_behavior_score": 6.0
+    },
+    {
+      "city": "Noida / Greater Noida",
+      "problem_pain_level": 7,
+      "willingness_to_pay": 8,
+      "trust_speed": 8,
+      "jugaad_presence": 5,
+      "relationship_dependency": 5,
+      "family_decision_influence": 4,
+      "composite_behavior_score": 7.2
+    },
+    {
+      "city": "Gurugram",
+      "problem_pain_level": 7,
+      "willingness_to_pay": 9,
+      "trust_speed": 9,
+      "jugaad_presence": 4,
+      "relationship_dependency": 4,
+      "family_decision_influence": 3,
+      "composite_behavior_score": 8.2
+    },
+    {
+      "city": "Patna",
+      "problem_pain_level": 8,
+      "willingness_to_pay": 4,
+      "trust_speed": 3,
+      "jugaad_presence": 9,
+      "relationship_dependency": 9,
+      "family_decision_influence": 9,
+      "composite_behavior_score": 3.0
+    },
+    {
+      "city": "Bhubaneswar",
+      "problem_pain_level": 6,
+      "willingness_to_pay": 5,
+      "trust_speed": 5,
+      "jugaad_presence": 6,
+      "relationship_dependency": 7,
+      "family_decision_influence": 7,
+      "composite_behavior_score": 4.8
+    },
+    {
+      "city": "Mysuru",
+      "problem_pain_level": 5,
+      "willingness_to_pay": 6,
+      "trust_speed": 6,
+      "jugaad_presence": 4,
+      "relationship_dependency": 6,
+      "family_decision_influence": 6,
+      "composite_behavior_score": 5.8
+    },
+    {
+      "city": "Ranchi",
+      "problem_pain_level": 7,
+      "willingness_to_pay": 4,
+      "trust_speed": 3,
+      "jugaad_presence": 8,
+      "relationship_dependency": 8,
+      "family_decision_influence": 8,
+      "composite_behavior_score": 3.2
+    },
+    {
+      "city": "Guwahati",
+      "problem_pain_level": 7,
+      "willingness_to_pay": 4,
+      "trust_speed": 4,
+      "jugaad_presence": 7,
+      "relationship_dependency": 8,
+      "family_decision_influence": 8,
+      "composite_behavior_score": 3.5
+    },
+    {
+      "city": "Dehradun",
+      "problem_pain_level": 6,
+      "willingness_to_pay": 6,
+      "trust_speed": 5,
+      "jugaad_presence": 5,
+      "relationship_dependency": 6,
+      "family_decision_influence": 6,
+      "composite_behavior_score": 5.5
+    },
+    {
+      "city": "Mangaluru",
+      "problem_pain_level": 5,
+      "willingness_to_pay": 6,
+      "trust_speed": 6,
+      "jugaad_presence": 4,
+      "relationship_dependency": 7,
+      "family_decision_influence": 6,
+      "composite_behavior_score": 5.8
+    },
+    {
+      "city": "Raipur",
+      "problem_pain_level": 6,
+      "willingness_to_pay": 4,
+      "trust_speed": 4,
+      "jugaad_presence": 7,
+      "relationship_dependency": 8,
+      "family_decision_influence": 8,
+      "composite_behavior_score": 3.5
+    }
+  ]
+}
+
