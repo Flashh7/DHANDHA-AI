@@ -92,8 +92,9 @@ async function initCredentialDisplay() {
         throw new Error(message);
       }
 
+      const cleanedReport = cleanReportText(data.result || 'No analysis received.');
       statusEl.textContent = 'Analysis complete.';
-      resultEl.innerHTML = renderResultHtml(data.result || 'No analysis received.');
+      resultEl.innerHTML = renderResultHtml(cleanedReport || 'No analysis received.');
       resultCardEl.classList.remove('hidden');
       downloadBtn.classList.remove('hidden');
     } catch (error) {
@@ -244,6 +245,27 @@ function loadJsPDF() {
     script.onerror = () => reject(new Error('Failed to load jsPDF from CDN.'));
     document.body.appendChild(script);
   });
+}
+
+function cleanReportText(rawText) {
+  const lines = String(rawText || '').split(/\r?\n/);
+  const instructionPatterns = [
+    /^FINAL OUTPUT FORMAT$/i,
+    /^IDEA SUMMARY \(2-3 lines\)$/i,
+    /^SCORING \(out of 10 for each\)$/i,
+    /^Provide a clear TAM\/SAM\/SOM estimate/i,
+    /^Include the relevant customer segment/i,
+    /^Highlight whether the market is large enough/i,
+    /^List the main direct and indirect competitors in India:?$/i
+  ];
+
+  const cleaned = lines.filter((line) => {
+    const trimmed = line.trim();
+    if (!trimmed) return true;
+    return !instructionPatterns.some((pattern) => pattern.test(trimmed));
+  });
+
+  return cleaned.join('\n').replace(/\n{3,}/g, '\n\n').trim();
 }
 
 async function downloadPdf() {
@@ -408,8 +430,14 @@ async function downloadPdf() {
   doc.line(margin, y, 210 - margin, y);
   y += 10;
 
+  const cleanedText = cleanReportText(resultEl.textContent || '');
+  if (!cleanedText) {
+    alert('No clean report content available to export. Please run analysis again.');
+    return;
+  }
+
   const parser = new DOMParser();
-  const htmlDoc = parser.parseFromString(resultEl.innerHTML, 'text/html');
+  const htmlDoc = parser.parseFromString(renderResultHtml(cleanedText), 'text/html');
   htmlDoc.body.childNodes.forEach(renderElement);
 
   const idea = ideaEl.value.trim() || 'startup-idea';
