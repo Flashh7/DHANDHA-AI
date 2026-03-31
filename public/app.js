@@ -1,53 +1,13 @@
 const ideaEl = document.getElementById('idea');
-const apiUrlEl = document.getElementById('apiUrl');
-const apiKeyEl = document.getElementById('apiKey');
 const analyzeBtn = document.getElementById('analyzeBtn');
 const spinner = document.getElementById('spinner');
 const statusEl = document.getElementById('status');
 const resultCardEl = document.getElementById('resultCard');
 const resultEl = document.getElementById('result');
 const downloadBtn = document.getElementById('downloadBtn');
-const credentialsPanel = document.getElementById('credentialsPanel');
-const credentialsNotice = document.getElementById('credentialsNotice');
-
-const storedApiUrl = localStorage.getItem('nvidiaApiUrl');
-const storedApiKey = localStorage.getItem('nvidiaApiKey');
-if (storedApiUrl) apiUrlEl.value = storedApiUrl;
-if (storedApiKey) apiKeyEl.value = storedApiKey;
-
-let hasServerConfig = false;
-
-
-async function initCredentialDisplay() {
-  try {
-      const response = await fetch('/api/config');
-      if (response.ok) {
-        const data = await response.json();
-        hasServerConfig = data.hasNvidiaConfig;
-      }
-    } catch (err) {
-      console.warn('Unable to fetch config status', err);
-    }
-
-    const storedValuesExist = Boolean(storedApiKey || storedApiUrl);
-    if (storedValuesExist || hasServerConfig) {
-      credentialsPanel?.classList.add('hidden');
-      credentialsNotice?.classList.remove('hidden');
-    } else {
-      credentialsPanel?.classList.remove('hidden');
-      credentialsNotice?.classList.add('hidden');
-    }
-  }
-
-  initCredentialDisplay();
 
   analyzeBtn.addEventListener('click', async () => {
     const idea = ideaEl.value.trim();
-    const apiKey = apiKeyEl.value.trim() || localStorage.getItem('nvidiaApiKey');
-    const apiUrl = apiUrlEl.value.trim() || localStorage.getItem('nvidiaApiUrl');
-
-    if (apiKey) localStorage.setItem('nvidiaApiKey', apiKey);
-    if (apiUrl) localStorage.setItem('nvidiaApiUrl', apiUrl);
 
     if (!idea) {
       statusEl.textContent = 'Please enter an idea to analyze.';
@@ -64,8 +24,6 @@ async function initCredentialDisplay() {
 
     try {
       const requestBody = { idea };
-      if (apiKey) requestBody.apiKey = apiKey;
-      if (apiUrl) requestBody.apiUrl = apiUrl;
 
       const response = await fetch('/api/analyze', {
         method: 'POST',
@@ -75,30 +33,36 @@ async function initCredentialDisplay() {
         body: JSON.stringify(requestBody)
       });
 
-      let data;
-      try {
-        data = await response.json();
-      } catch (parseError) {
-        const text = await response.text();
-        throw new Error(`Server returned non-JSON response: ${text.slice(0, 240)}`);
+      const responseText = await response.text();
+      let data = {};
+      if (responseText) {
+        try {
+          data = JSON.parse(responseText);
+        } catch (parseError) {
+          if (response.ok) {
+            throw new Error(`Server returned non-JSON response: ${responseText.slice(0, 240)}`);
+          }
+        }
       }
 
-      resultCardEl.classList.add('hidden');
-      return;
-    }
+      if (!response.ok) {
+        const message = data?.error || responseText || `Request failed with status ${response.status}`;
+        throw new Error(message);
+      }
 
-    statusEl.textContent = 'Analysis complete.';
-    resultEl.innerHTML = renderResultHtml(data.result);
-    resultCardEl.classList.remove('hidden');
-    downloadBtn.classList.remove('hidden');
-  } catch (error) {
-    statusEl.textContent = `Network error: ${error.message}`;
-  } finally {
-    analyzeBtn.classList.remove('loading');
-    spinner.classList.add('hidden');
-    analyzeBtn.disabled = false;
-  }
-});
+      const cleanedResult = cleanReportText(data.result || 'No analysis received.');
+      statusEl.textContent = 'Analysis complete.';
+      resultEl.innerHTML = renderResultHtml(cleanedResult || 'No analysis received.');
+      resultCardEl.classList.remove('hidden');
+      downloadBtn.classList.remove('hidden');
+    } catch (error) {
+      statusEl.textContent = `Error: ${error.message}`;
+    } finally {
+      analyzeBtn.classList.remove('loading');
+      spinner.classList.add('hidden');
+      analyzeBtn.disabled = false;
+    }
+  });
 
 function escapeHtml(value) {
   return value
@@ -239,6 +203,49 @@ function loadJsPDF() {
     script.onerror = () => reject(new Error('Failed to load jsPDF from CDN.'));
     document.body.appendChild(script);
   });
+}
+
+function cleanReportText(rawText) {
+  const lines = String(rawText || '').split(/\r?\n/);
+  const headingNormalizations = [
+    { pattern: /^IDEA SUMMARY \(2-3 lines\)$/i, replacement: 'IDEA SUMMARY' },
+    { pattern: /^SCORING \(out of 10 for each\)$/i, replacement: 'SCORING' },
+    { pattern: /^RED FLAGS \(critical issues\)$/i, replacement: 'RED FLAGS' }
+  ];
+
+  const instructionPatterns = [
+    /^FINAL OUTPUT FORMAT$/i,
+    /^STEP \d+:/i,
+    /^MANDATORY DISCLAIMER/i,
+    /^FINAL INSTRUCTION:?$/i,
+    /^STRICT RULES:?$/i,
+    /^Provide a clear TAM\/SAM\/SOM estimate/i,
+    /^Include the relevant customer segment/i,
+    /^Highlight whether the market is large enough/i,
+    /^List the main direct and indirect competitors in India:?$/i,
+    /^Do not print prompt templates/i,
+    /^Output only the report sections/i,
+    /^Use uppercase section headings/i,
+    /^For SCORING, list exactly six items/i,
+    /^Do not include HTML, JSON/i,
+    /^No fluff$/i,
+    /^No generic advice$/i
+  ];
+
+  const cleaned = lines
+    .map((line) => {
+      let normalized = line.trim();
+      headingNormalizations.forEach(({ pattern, replacement }) => {
+        if (pattern.test(normalized)) normalized = replacement;
+      });
+      return normalized;
+    })
+    .filter((trimmed) => {
+    if (!trimmed) return true;
+    return !instructionPatterns.some((pattern) => pattern.test(trimmed));
+    });
+
+  return cleaned.join('\n').replace(/\n{3,}/g, '\n\n').trim();
 }
 
 async function downloadPdf() {
@@ -403,8 +410,14 @@ async function downloadPdf() {
   doc.line(margin, y, 210 - margin, y);
   y += 10;
 
+  const cleanedText = cleanReportText(resultEl.textContent || '');
+  if (!cleanedText) {
+    alert('No clean report content available to export. Please run analysis again.');
+    return;
+  }
+
   const parser = new DOMParser();
-  const htmlDoc = parser.parseFromString(resultEl.innerHTML, 'text/html');
+  const htmlDoc = parser.parseFromString(renderResultHtml(cleanedText), 'text/html');
   htmlDoc.body.childNodes.forEach(renderElement);
 
   const idea = ideaEl.value.trim() || 'startup-idea';
