@@ -311,8 +311,9 @@ function buildDatasetContext(body) {
 }
 
 app.get('/config', (req, res) => {
+  const nvidiaKey = (process.env.NVIDIA_API_KEY || '').trim();
   res.json({
-    hasNvidiaConfig: Boolean(process.env.NVIDIA_API_KEY && process.env.NVIDIA_API_URL)
+    hasNvidiaConfig: Boolean(nvidiaKey)
   });
 });
 
@@ -323,16 +324,12 @@ app.post('/analyze', async (req, res) => {
       return res.status(400).json({ error: 'Idea is required.' });
     }
 
-    const nvidiaKey = apiKey || process.env.NVIDIA_API_KEY;
-    const nvidiaUrl = req.body.apiUrl || process.env.NVIDIA_API_URL;
+    const nvidiaKey = (apiKey || process.env.NVIDIA_API_KEY || '').trim();
+    const nvidiaUrl = (req.body.apiUrl || process.env.NVIDIA_API_URL || 'https://integrate.api.nvidia.com/v1').trim();
     const nvidiaModel = req.body.model || process.env.NVIDIA_MODEL || 'meta/llama-3.1-405b-instruct';
 
     if (!nvidiaKey) {
       return res.status(400).json({ error: 'NVIDIA API key is required. Provide it in the form or set NVIDIA_API_KEY.' });
-    }
-
-    if (!nvidiaUrl) {
-      return res.status(400).json({ error: 'NVIDIA API URL is required. Provide it in the form or set NVIDIA_API_URL.' });
     }
 
     const client = new OpenAI({ apiKey: nvidiaKey, baseURL: nvidiaUrl });

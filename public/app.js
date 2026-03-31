@@ -83,22 +83,23 @@ async function initCredentialDisplay() {
         throw new Error(`Server returned non-JSON response: ${text.slice(0, 240)}`);
       }
 
-      resultCardEl.classList.add('hidden');
-      return;
-    }
+      if (!response.ok) {
+        const message = data?.error || `Request failed with status ${response.status}`;
+        throw new Error(message);
+      }
 
-    statusEl.textContent = 'Analysis complete.';
-    resultEl.innerHTML = renderResultHtml(data.result);
-    resultCardEl.classList.remove('hidden');
-    downloadBtn.classList.remove('hidden');
-  } catch (error) {
-    statusEl.textContent = `Network error: ${error.message}`;
-  } finally {
-    analyzeBtn.classList.remove('loading');
-    spinner.classList.add('hidden');
-    analyzeBtn.disabled = false;
-  }
-});
+      statusEl.textContent = 'Analysis complete.';
+      resultEl.innerHTML = renderResultHtml(data.result || 'No analysis received.');
+      resultCardEl.classList.remove('hidden');
+      downloadBtn.classList.remove('hidden');
+    } catch (error) {
+      statusEl.textContent = `Error: ${error.message}`;
+    } finally {
+      analyzeBtn.classList.remove('loading');
+      spinner.classList.add('hidden');
+      analyzeBtn.disabled = false;
+    }
+  });
 
 function escapeHtml(value) {
   return value
