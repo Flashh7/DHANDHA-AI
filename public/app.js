@@ -92,9 +92,8 @@ async function initCredentialDisplay() {
         throw new Error(message);
       }
 
-      const cleanedReport = cleanReportText(data.result || 'No analysis received.');
       statusEl.textContent = 'Analysis complete.';
-      resultEl.innerHTML = renderResultHtml(cleanedReport || 'No analysis received.');
+      resultEl.innerHTML = renderResultHtml(data.result || 'No analysis received.');
       resultCardEl.classList.remove('hidden');
       downloadBtn.classList.remove('hidden');
     } catch (error) {
